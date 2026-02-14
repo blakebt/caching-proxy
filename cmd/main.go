@@ -20,13 +20,13 @@ func main() {
 		"URL of server to forward requests",
 	)
 
-	responseCache := make(map[string]*http.Response)
+	flag.Parse()
 
+	responseCache := make(map[string]Response)
 	app := Application{
 		responseCache: responseCache,
 	}
 
-	flag.Parse()
 	mux.HandleFunc("/", requestHandler(*origin, app.responseCache))
 
 	fmt.Printf("Starting server port=%s\n", *port)

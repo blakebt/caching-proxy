@@ -2,4 +2,9 @@ package main
 
 import "net/http"
 
-type ResponseCache map[string]*http.Response
+type Response struct {
+	Header http.Header
+	Body   string
+}
+
+type ResponseCache map[string]Response

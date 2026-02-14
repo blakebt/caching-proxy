@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 )
 
@@ -22,17 +21,23 @@ func requestHandler(origin string, responseCache ResponseCache) http.HandlerFunc
 			}
 
 			resp.Header.Add("X-Cache", "MISS")
-			responseCache[forwardReq] = resp
 
-			respBody := getResponseBody(resp)
-			fmt.Println(respBody)
+			fullResponse := Response{
+				Header: resp.Header,
+				Body:   getResponseBody(resp),
+			}
+
+			responseCache[forwardReq] = fullResponse
+			fmt.Printf("%s\n\n", fullResponse.Header)
+			fmt.Printf("%s\n", fullResponse.Body)
 
 		} else {
 			if cachedResp.Header.Get("X-Cache") != "HIT" {
 				cachedResp.Header.Set("X-Cache", "HIT")
 			}
 
-			log.Println(cachedResp)
+			fmt.Printf("%s\n\n", cachedResp.Header)
+			fmt.Printf("%s\n", cachedResp.Body)
 		}
 
 	}
