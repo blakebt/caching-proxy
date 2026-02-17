@@ -1,5 +1,20 @@
 
 # Caching Proxy
 
-A simple caching proxy server that takes requests to locahost, forwards them to your origin of choice, and caches the responses
+## Overview
+A simple caching proxy server written in Go that takes requests to locahost, forwards them to your origin of choice, and caches the responses
 allowing for quick access when needed
+
+### How it works
+
+- Starts a server on the port of your choice ( Default: :4000 )
+- Accepts origin of your choice ( Default: dummyjson.com )
+- Forwards requests made to localhost to the provided origin
+- Caches the response headers and response bodies for fast access
+
+## Run Instructions
+
+- Clone the repo or download the .Zip
+- If on Windows: run caching.exe to start the server
+- If on Linux: run ./caching to start the server
+- Make requests to localhost:port
