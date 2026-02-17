@@ -11,6 +11,7 @@ allowing for quick access when needed
 - Accepts origin of your choice ( Default: dummyjson.com )
 - Forwards requests made to localhost to the provided origin
 - Caches the response headers and response bodies for fast access
+- Prints the response headers and response bodies to the terminal in a safe way to prevent terminal escape sequence issues
 
 ## Run Instructions
 
