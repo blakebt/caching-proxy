@@ -7,8 +7,8 @@ allowing for quick access when needed
 
 ### How it works
 
-- Starts a server on the port of your choice ( Default: :4000 )
-- Accepts origin of your choice ( Default: dummyjson.com )
+- Starts a server on the port of your choice using the -port flag ( Default: :4000 )
+- Accepts origin of your choice using the -origin flag ( Default: dummyjson.com )
 - Forwards requests made to localhost to the provided origin
 - Caches the response headers and response bodies for fast access
 - Prints the response headers and response bodies to the terminal in a safe way to prevent terminal escape sequence issues
