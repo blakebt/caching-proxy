@@ -28,16 +28,16 @@ func requestHandler(origin string, responseCache ResponseCache) http.HandlerFunc
 			}
 
 			responseCache[forwardReq] = fullResponse
-			fmt.Printf("%s\n\n", fullResponse.Header)
-			fmt.Printf("%s\n", fullResponse.Body)
+			fmt.Printf("%q\n\n", fullResponse.Header)
+			fmt.Printf("%q\n", fullResponse.Body)
 
 		} else {
 			if cachedResp.Header.Get("X-Cache") != "HIT" {
 				cachedResp.Header.Set("X-Cache", "HIT")
 			}
 
-			fmt.Printf("%s\n\n", cachedResp.Header)
-			fmt.Printf("%s\n", cachedResp.Body)
+			fmt.Printf("%q\n\n", cachedResp.Header)
+			fmt.Printf("%q\n", cachedResp.Body)
 		}
 
 	}
