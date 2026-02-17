@@ -19,4 +19,4 @@ allowing for quick access when needed
 - If on Windows: run caching.exe to start the server
 - If on Linux: run ./caching to start the server
 - Make requests to localhost:port
-- Ex. curl http:localhost:4000/products forwards to https://dummyjson.com/products and returns a json object of products
+- Ex. curl http://localhost:4000/products forwards to https://dummyjson.com/products and returns a json object of products
